@@ -6,17 +6,19 @@ window.addEventListener('DOMContentLoaded', () => {
     // 1. Ẩn lớp phủ
     overlay.style.display = 'none';
 
-    // 2. Phát nhạc
-    music.play().catch(err => {
-      console.warn("Không thể phát nhạc tự động:", err);
+    // 2. Gọi play() sau tương tác
+    music.play().then(() => {
+      console.log("🎵 Nhạc đã phát");
+    }).catch(err => {
+      console.warn("⚠️ Trình duyệt chặn phát nhạc:", err);
     });
 
-    // Gỡ sự kiện sau khi chạy
+    // Gỡ sự kiện
     window.removeEventListener('click', startExperience);
     window.removeEventListener('touchstart', startExperience);
   }
 
-  // Lắng nghe nhấn chuột hoặc chạm lần đầu
+  // 👇 Lắng nghe tương tác đầu tiên trên mọi thiết bị
   window.addEventListener('click', startExperience);
   window.addEventListener('touchstart', startExperience);
 });
