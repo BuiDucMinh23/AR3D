@@ -2,18 +2,31 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chúc Mừng Đám Cưới</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Đám cưới</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #fff0f5;
+    }
+    img {
+      max-width: 90vw;
+      margin-top: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    audio {
+      display: none; /* Ẩn thanh phát nhạc */
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <img src="/couple.jpg" alt="Cô dâu chú rể" class="wedding-photo">
-    <audio id="bg-music" autoplay loop>
-  <source src="music.mp3" type="audio/mp3">
-  Trình duyệt của bạn không hỗ trợ âm thanh.
-</audio>
+  <h1>Chúc Mừng Hạnh Phúc!</h1>
+  <img src="/couple.jpg" alt="Cô dâu chú rể">
+  
+  <audio id="bg-music" loop>
+    <source src="/music.mp3" type="audio/mp3">
+  </audio>
 
-  </div>
+  <script src="/script.js"></script>
 </body>
 </html>
