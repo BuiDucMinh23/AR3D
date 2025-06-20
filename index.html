@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Đám cưới</title>
-  <style>
-    body {
-      text-align: center;
-      background-color: #fff0f5;
-    }
-    img {
-      max-width: 90vw;
-      margin-top: 50px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    audio {
-      display: none; /* Ẩn thanh phát nhạc */
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+  <!-- 👆 Lớp phủ -->
+  <div id="overlay">
+    <div class="message">Nhấn vào màn hình để bắt đầu 🎵</div>
+  </div>
+
+  <!-- 👰‍♀️ Ảnh cô dâu chú rể -->
   <h1>Chúc Mừng Hạnh Phúc!</h1>
   <img src="/couple.jpg" alt="Cô dâu chú rể">
-  
+
+  <!-- 🎵 Nhạc nền -->
   <audio id="bg-music" loop>
     <source src="/music.mp3" type="audio/mp3">
   </audio>

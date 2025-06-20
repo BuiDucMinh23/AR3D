@@ -1,20 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
   const music = document.getElementById('bg-music');
+  const overlay = document.getElementById('overlay');
 
-  // ✅ Chỉ phát nhạc sau lần tương tác đầu tiên
-  function enableMusicPlayback() {
-    music.play().then(() => {
-      console.log("🎵 Nhạc đã phát thành công");
-    }).catch((error) => {
-      console.warn("⚠️ Trình duyệt chặn phát nhạc tự động:", error);
+  function startExperience() {
+    // 1. Ẩn lớp phủ
+    overlay.style.display = 'none';
+
+    // 2. Phát nhạc
+    music.play().catch(err => {
+      console.warn("Không thể phát nhạc tự động:", err);
     });
 
-    // Chỉ cần phát 1 lần → remove listener sau khi click
-    window.removeEventListener('click', enableMusicPlayback);
-    window.removeEventListener('touchstart', enableMusicPlayback);
+    // Gỡ sự kiện sau khi chạy
+    window.removeEventListener('click', startExperience);
+    window.removeEventListener('touchstart', startExperience);
   }
 
-  // Lắng nghe tương tác đầu tiên
-  window.addEventListener('click', enableMusicPlayback);
-  window.addEventListener('touchstart', enableMusicPlayback); // cho điện thoại
+  // Lắng nghe nhấn chuột hoặc chạm lần đầu
+  window.addEventListener('click', startExperience);
+  window.addEventListener('touchstart', startExperience);
 });
